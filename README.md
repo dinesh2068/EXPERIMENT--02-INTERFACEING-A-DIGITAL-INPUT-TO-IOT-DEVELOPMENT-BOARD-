@@ -1,8 +1,8 @@
 ###  DATE: 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+### NAME: DINESHKARTHIK N
+### ROLL NO : 212223220021
+### DEPARTMENT: B.TECH INFORMATION TECHNOLOGY
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -78,12 +78,41 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 ## STM 32 CUBE PROGRAM :
 
+```
+
+#include "main.h"
+#include "stdbool.h"
+void IRsensor();
+bool IRsensorop;
+while(1)
+{
+	IRsensor();
+}
+void IRsensor()
+{
+IRsensorop=HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_3);
+if (IRsensorop==1)
+{
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+	HAL_Delay(500);
+}
+else
+{
+	HAL_GPIO_WritePin(GPIO,GPIO_PIN_0,GPIO_PIN_RESET);
+}
+}
+
+```
 
 
 ## Output  :
  
- 
- 
+ ![image](https://github.com/user-attachments/assets/683f9877-0e73-4752-b85d-5984c6dc94ab)
+
+ ![image](https://github.com/user-attachments/assets/f42ebeed-8515-48fd-a18d-876b780988b2)
+
  
 ## Result :
 Interfacing a digital Input (ir pair) with ARM microcontroller based IOT development is executed and the results are verified.
